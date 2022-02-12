@@ -839,4 +839,9 @@ defaults.pcm.card 1;
 
 > config push -u origin master 
 
+## Nodejs install
 
+* nodejs closest bin can be found by -
+> npm bin
+
+* put this in path in .profile 
