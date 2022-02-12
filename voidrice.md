@@ -777,3 +777,54 @@ defaults.pcm.card 1;
 # Set Github for Linux
 
 * follow this tutorial: <https://kbroman.org/github_tutorial/pages/first_time.html>
+* first set up your name and email address:
+
+git config --global user.name "Riad Mashrub Shourov"
+
+git config --global user.email "shourovrm@gmail.com"
+
+* Set up ssh:
+
+> ssh-keygen -t rsa -C "shourovrm@gmail.com"
+
+* Copy the content of ~/.ssh/id_rsa.pub file and in Github Account Settings > SSH keys 
+* In a terminal, test it - 
+> ssh -T git@github.com
+
+* create a Personal Access Token (PAT) in github and use it when asked for password
+* save git credientials: 
+> git config --global credential.helper store
+
+* Use git:// instead of https:// to avoid asking password everytime
+
+# Save dotfiles in github (<https://www.atlassian.com/git/tutorials/dotfiles>)
+
+* We will use a git bare repository for this purpose
+* create a bare git repository 
+> cd ~
+> git init --bare $HOME/.cfg
+* create an alias config:
+> alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+* We set a flag - local to the repository - to hide files we are not explicitly tracking yet. This is so that when you type config status and other commands later, files you are not interested in tracking will not show up as untracked.
+> config config --local status.showUntrackedFiles no
+* save the alias in .bashrc 
+> echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+* add a remote origin 
+> config remote add origin git@github.com:shourovrm/rmsrice.git
+
+* now we can check status:
+> config status
+
+* add and commit any file or folder
+> config add ~/.tmux*
+> config commit -m "add tmux files"
+
+* push to master 
+> config push -u origin master 
+
+* delete any file from repository:
+> config rm ~/git.md 
+> config commit -m "remove git.md"
+
+
+
