@@ -1,0 +1,6 @@
+#/bin/sh
+
+#input=$1;
+
+#st -e /usr/bin/R --quiet --vanilla
+st -e radian --quiet --vanilla
