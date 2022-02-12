@@ -779,9 +779,9 @@ defaults.pcm.card 1;
 * follow this tutorial: <https://kbroman.org/github_tutorial/pages/first_time.html>
 * first set up your name and email address:
 
-git config --global user.name "Riad Mashrub Shourov"
+> git config --global user.name "Riad Mashrub Shourov"
 
-git config --global user.email "shourovrm@gmail.com"
+> git config --global user.email "shourovrm@gmail.com"
 
 * Set up ssh:
 
@@ -802,7 +802,9 @@ git config --global user.email "shourovrm@gmail.com"
 * We will use a git bare repository for this purpose
 * create a bare git repository 
 > cd ~
+
 > git init --bare $HOME/.cfg
+
 * create an alias config:
 > alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 * We set a flag - local to the repository - to hide files we are not explicitly tracking yet. This is so that when you type config status and other commands later, files you are not interested in tracking will not show up as untracked.
@@ -817,6 +819,7 @@ git config --global user.email "shourovrm@gmail.com"
 
 * add and commit any file or folder
 > config add ~/.tmux*
+
 > config commit -m "add tmux files"
 
 * push to master 
@@ -824,12 +827,16 @@ git config --global user.email "shourovrm@gmail.com"
 
 * delete any file from repository:
 > config rm ~/git.md 
+
 > config commit -m "remove git.md"
+
 > config push -u origin master 
 
 * update files:
 > config add -u
+
 > config commit -m "updated files"
+
 > config push -u origin master 
 
 
