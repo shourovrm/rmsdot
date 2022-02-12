@@ -1,0 +1,10 @@
+xrandr --dpi 120 &
+dunst &
+xrdb .Xresources & 
+pa-applet &
+#nm-applet &
+lxpolkit &
+# nitrogen --restore &
+feh --recursive --bg-fill --randomize ~/Pictures &
+xclip &
+# setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle &
