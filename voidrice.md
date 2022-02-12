@@ -825,6 +825,11 @@ git config --global user.email "shourovrm@gmail.com"
 * delete any file from repository:
 > config rm ~/git.md 
 > config commit -m "remove git.md"
+> config push -u origin master 
 
+* update files:
+> config add -u
+> config commit -m "updated files"
+> config push -u origin master 
 
 
