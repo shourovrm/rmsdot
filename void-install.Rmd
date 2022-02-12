@@ -1,0 +1,185 @@
+---
+title: Voidlinux Installation Guide
+output: html_document
+---
+
+## Commands
+
+### packages
+xbps-install -Sy void-repo-nonfree void-repo-multilib-nonfree
+cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+sed -i 's|https://alpha.de.repo.voidlinux.org|https://mirrors.cnnic.cn/voidlinux|g' /etc/xbps.d/*-repository-*.conf
+
+xbps-install -Su
+
+xbps-install -Sy neovim git wget curl lxsession libXinerama-devel libXft-devel harfbuzz-devel base-devel pcmanfm lxappearance nitrogen arc-theme font-inconsolata-otf pa-applet j4-dmenu-desktop gparted xcompmgr i3lock xrdb font-libertine-ttf R-cran-Rcpp mupdf dunst font-awesome
+
+### Locale
+vim /etc/default/libc-locales >> uncomment bn_BD
+xbps-reconfigure -f glibc-locales
+
+### Grub
+xbps-install grub-x86_64-efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id="Void" --no-nvram
+update-grub
+
+vim /etc/default/grub
+>> GRUB_DISABLE_OS_PROBER=false
+
+update-grub
+
+Edit boot setup to detect this grub-efi
+
+
+
+## Important files
+These files were copied and set from previous installs
+
+1. .bashrc
+2. .profile
+3. .config/x11/xresources -> ~/.Xresources
+4. .config/nvim/init.vim
+
+
+## Polkit
+
+Installing lxsession, lxdm and libXft-devel, libXinerama-devel and harfbuzz-devel and its dependencies somehow solves polkit issues.
+
+Also, following packages are also needed- polkit polkit-qt5 dbus-elogind dbus-elogind-X11 elogind libelogind
+
+# Post-Installation
+
+* install brave browser, zoom and vscode  using xdeb
+* install libreoffice
+* install lshw
+* install libreoffice
+* install sxiv
+* youtube-dl
+* mpv
+* ranger
+* tmux
+* python3-pip
+* pip3 install -U radian
+* ncurses-devel (for htop-vim-git)
+* htop-vim-git from https://github.com/KoffeinFlummi/htop-vim.git
+* radian and its settings in ~/.local/bin
+* git: oh-my-tmux::https://github.com/gpakosz/.tmux.git
+* rstudio
+* nerd-fonts
+* xprop (can be used to check window name for i3)
+* font-material-design-icons-ttf
+* evince
+
+## install st
+
+* first install libxft-bgra : https://github.com/uditkarode/libxft-bgra
+* then install st
+
+## Virtualbox
+
+* install virtualbox-ose
+* install extension pack
+* add user to vboxusers goup
+
+## R packages
+
+### For tidyverse
+
+install these using xbps -
+
+sudo xbps-install -S R-cran-stringi R-cran-stringr libxml2-devel libcurl-devel libgfortran-devel gcc-fortran openblas-devel pandoc
+
+
+## for tinytex
+* install tinytex
+* tinytex::install_tinytex()
+
+## picom
+
+put picom in i3-config with --experimental-backend
+
+
+## yt-dlp
+
+Install yt-dlp from github and setup .config/mpv/mpv.conf to use it
+
+## ani-cli for anime
+
+Install from <https://github.com/pystardust/ani-cli>
+
+## ytfzf
+
+* install jq and curl 
+* install ytfzf from <https://github.com/pystardust/ytfzf>
+* change default invidious_instance from https://vid.puffyan.us to https://ytb.trom.tf in ytfzf file located at /usr/local/bin/ytfzf.
+
+
+## setting dpi
+
+* install xdpyinfo
+* check dpi: > xdpyinfo | grep -B2 resolution
+* check correct dpi for the monitor at <https://dpi.lv/>
+* set dpi in .xprofile: xrandr --dpi 120 &
+
+## install starship shell prompt
+
+* install starship using xbps 
+* insert this line at the end of .bashrc: eval "$(starship init bash)"
+
+## Nerd Fonts
+
+* we can install nerd-fonts package, or 
+* download fonts from <https://www.nerdfonts.com/font-downloads>
+* good fonts are - JetBrains Mono, FiraCode Mono, Anonymice nerd fonts, UbuntuMono, losevka
+
+
+## How to change keyboard layout
+
+* check current keyboard layout: > setxkbmap -query
+* check all bangla keyboards and variants: sed '/! variant/,/^$/!d;/Bangla/!d' < /usr/share/X11/xkb/rules/evdev.lst
+* set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle 
+* set i3status-rust to show keyboard layouts using xkb-switch
+
+## i3status-rust
+
+* some nice blocks: <https://github.com/greshake/i3status-rust/blob/master/examples/README.md>
+* main git and blocks: <https://github.com/greshake/i3status-rust/blob/master/doc/blocks.md>, <https://github.com/greshake/i3status-rust>
+* install font-awesome, nerd-fonts, noto-fonts-ttf, noto-fonts-ttf-extra
+
+## reboot, shutdown etc without password
+
+* put these in /etc/sudoers.d/rms by using:
+> echo "username ALL=(ALL) NOPASSWD:  /bin/halt,  /bin/poweroff,  /bin/reboot,  /bin/shutdown,  /bin/zzz,  /bin/ZZZ" >> /etc/sudoers.d/rms 
+* add these in aliasrc file:
+```{bash}
+alias halt="sudo halt"
+alias poweroff="sudo poweroff"
+alias reboot="sudo reboot"
+alias shutdown="sudo shutdown"
+alias zzz="sudo zzz"
+alias ZZZ="sudo ZZZ"
+```
+
+
+## bangla layout 
+
+## solve vim pasting
+
+* install xclip and autostart at .xprofile 
+
+## for Neovim
+
+* install shellcheck
+* install using npm: eslint, markdownlint
+
+## setting up ranger
+
+* install ueberzug, ImageMagick, ffmpeg
+* install ucollage using git from <https://ucollage.readthedocs.io/en/stable/install.html> (not really needed, sxiv is enough)
+* put these lines in ~/.config/ranger/rc.conf:
+```{bash}
+set preview_images true
+set preview_images_method ueberzug
+```
+
+
