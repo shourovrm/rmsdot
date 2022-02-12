@@ -1,0 +1,56 @@
+#!/bin/sh
+alias ka="killall" \
+	mkd="mkdir -pv" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
+	magit="nvim -c MagitOnly" \
+	g="git" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	x="sxiv -ft *" \
+	sdn="sudo shutdown -h now" \
+	gua="git remote | xargs -L1 git push --all" \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	youtube-dl="yt-dlp" \
+	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yta="yt -x -f bestaudio/best" \
+  yts="ytfzf --detach -s -t" \
+	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+	ffmpeg="ffmpeg -hide_banner" \
+	bc="bc -ql" \
+	R="~/.local/bin/radian" \
+  ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	p="pacman" \
+	xr="sudo xbps-remove -R" \
+	z="zathura" \
+	m="mupdf" \
+  dotdrop="~/repos/rmsdot/dotdrop.sh --cfg=~/repos/rmsdot/config.yaml"
+
+# aliases for power
+alias halt="sudo halt"
+alias poweroff="sudo poweroff"
+alias reboot="sudo reboot"
+alias shutdown="sudo shutdown"
+alias zzz="sudo zzz"
+alias ZZZ="sudo ZZZ"
+
+  # f="$FILE" \
+	# yt="youtube-dl --add-metadata -i" \
+	# mnc="sudo mount -t ntfs-3g /dev/sda1 /mnt/windows/ -o rw,uid=1000,dmask=0077,fmask=0177" \
+	# mnd="sudo mount -t ntfs-3g /dev/sda8 /mnt/collection -o rw,uid=1000,dmask=0077,fmask=0177"
+#	blcct="echo -e """power on\nconnect 03:7B:06:69:0B:41\nquit"""|bluetoothctl"
+#	bldct="echo -e """disconnect 03:7B:06:69:0B:41\nquit"""|bluetoothctl"
+	# calcurse="calcurse -D ~/.config/calcurse" 
+# xi="sudo xbps-install" \
+# 	xr="sudo xbps-remove" \
+	# trem="transmission-remote" \
+	# YT="youtube-viewer" \
+# 
+# command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
