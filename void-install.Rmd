@@ -80,7 +80,7 @@ Also, following packages are also needed- polkit polkit-qt5 dbus-elogind dbus-el
 
 * install virtualbox-ose
 * install extension pack
-* add user to vboxusers goup
+* add user to vboxusers group
 
 ## R packages
 
@@ -163,6 +163,20 @@ alias ZZZ="sudo ZZZ"
 
 
 ## bangla layout 
+* put these in /etc/X11/xorg.conf.d/00-keyboard.conf: 
+
+
+Section "InputClass"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "us,bd"
+        Option "XkbModel" "pc105"
+        Option "XkbVariant" ",probhat"
+        Option "XkbOptions" "grp:win_space_toggle"
+EndSection
+
+* install xkb-switch
+* setup i3status-rust to toggle keyboard on_click 
 
 ## solve vim pasting
 
