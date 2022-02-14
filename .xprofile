@@ -1,10 +1,13 @@
 xrandr --dpi 120 &
 dunst &
 xrdb .Xresources & 
-pa-applet &
+# pa-applet &
 #nm-applet &
 lxpolkit &
 # nitrogen --restore &
 feh --recursive --bg-fill --randomize ~/Pictures &
 xclip &
+# floating calculator in R, located in ~/.local/bin/rcalc 
+# rcalc & 
+
 # setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle &

@@ -12,6 +12,7 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+$conda\
 $character"""
 
 [directory]
@@ -21,6 +22,9 @@ style = "blue"
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vicmd_symbol = "[❮](green)"
+
+[conda]
+format = "[$symbol$environment](dimmed green) "
 
 [git_branch]
 format = "[$branch]($style)"

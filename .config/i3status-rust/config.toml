@@ -80,7 +80,8 @@ format = " {speed_down;K*B} {speed_up;K*B}"
 
 [[block]]
 block = "networkmanager"
-on_click = "alacritty -e nmtui"
+on_click = "~/.local/bin/rofi-wifi-menu.sh"
+# on_click = "alacritty -e nmtui"
 interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
 interface_name_include = []
 ap_format = "{ssid} {strength}"
@@ -99,3 +100,12 @@ on_click = "xkb-switch -n"
 format = " {layout}"
 interval = 1
 
+[[block]]
+block = "sound"
+on_click = "alacritty -e alsamixer"
+
+[[block]]
+block = "custom"
+command = "echo \uf011" # assumes fontawesome icons
+on_click = "~/.config/i3/scripts/shutdown_menu -p rofi -c;"
+interval = "once"

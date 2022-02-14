@@ -845,3 +845,20 @@ defaults.pcm.card 1;
 > npm bin
 
 * put this in path in .profile 
+
+## setting up calculator in i3
+
+* put these lines in i3/config 
+
+
+#Then I have a window running R I use for basic arithmetic
+#I'll later bind this to mod+a.
+for_window [instance="math"] floating enable
+for_window [instance="math"] resize set 800 300
+for_window [instance="math"] move position center
+for_window [instance="math"] move scratchpad
+exec --no-startup-id $TERMINAL -fn "xft:mono:pixelsize=24" -name math -e radian -q --vanilla
+bindsym $mod+a [instance="math"] scratchpad show; move position center
+
+
+

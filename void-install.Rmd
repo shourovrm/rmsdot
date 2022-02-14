@@ -69,6 +69,7 @@ Also, following packages are also needed- polkit polkit-qt5 dbus-elogind dbus-el
 * xprop (can be used to check window name for i3)
 * font-material-design-icons-ttf
 * evince
+* xtools (it has shortcuts like xi and xrs)
 
 ## install st
 

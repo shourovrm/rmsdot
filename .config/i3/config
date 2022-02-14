@@ -107,7 +107,31 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
+
+#Then I have a window running R I use for basic arithmetic
+#I'll later bind this to mod+a.
+for_window [title="math"] floating enable
+for_window [title="math"] resize set 800 300
+for_window [title="math"] move position center
+for_window [title="math"] move scratchpad
+bindsym $mod+a [title="math"] scratchpad show; move position center
+#exec --no-startup-id $TERMINAL --title math -e R -q
+
+exec --no-startup-id $TERMINAL --title math -e radian --quiet --vanilla
+
+
+
+for_window [title="terminal_calculator"] floating enable, move scratchpad, scratchpad show;
+# for_window [WM_NAME="terminal_calculator"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
+
+
+# floating calculator
+#bindsym $mod+a scratchpad show
+# bindsym $mod+Shift+minus move scratchpad
+
+## power menu
+bindsym $mod+Shift+BackSpace exec --no-startup-id ~/.config/i3/scripts/shutdown_menu -p rofi -c;
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -160,7 +184,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

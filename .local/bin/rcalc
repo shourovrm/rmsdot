@@ -3,4 +3,5 @@
 #input=$1;
 
 #st -e /usr/bin/R --quiet --vanilla
-st -e radian --quiet --vanilla
+# st -e radian --quiet --vanilla
+$TERMINAL -t Terminal_Calculator -e radian --quiet --vanilla

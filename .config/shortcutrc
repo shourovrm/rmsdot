@@ -10,6 +10,7 @@ mn="cd /run/media/rms && ls -a" \
 bd="$EDITOR ~/.config/directories" \
 bw="$EDITOR ~/.config/bookmarks" \
 cfb="$EDITOR ~/.bashrc" \
+cfi="$EDITOR ~/.config/i3/config" \
 cfp="$EDITOR ~/.profile" \
 cfx="$EDITOR ~/.xprofile" \
 cfz="$EDITOR ~/.config/zsh/.zshrc" \
