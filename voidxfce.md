@@ -28,6 +28,8 @@ Output: pdf_document
   1.5 libgfortran-devel
   1.6 gcc-fortran
   1.8 openblas-devel
+  1.9 nlopt-devel
+  1.10 gsl-devel
 
 
 

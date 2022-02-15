@@ -118,6 +118,7 @@ Install from <https://github.com/pystardust/ani-cli>
 ## setting dpi
 
 * install xdpyinfo
+* check screen resolution: > xrandr
 * check dpi: > xdpyinfo | grep -B2 resolution
 * check correct dpi for the monitor at <https://dpi.lv/>
 * set dpi in .xprofile: xrandr --dpi 120 &
@@ -138,7 +139,8 @@ Install from <https://github.com/pystardust/ani-cli>
 
 * check current keyboard layout: > setxkbmap -query
 * check all bangla keyboards and variants: sed '/! variant/,/^$/!d;/Bangla/!d' < /usr/share/X11/xkb/rules/evdev.lst
-* set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle 
+
+(Not needed) * set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle 
 * set i3status-rust to show keyboard layouts using xkb-switch
 
 ## i3status-rust

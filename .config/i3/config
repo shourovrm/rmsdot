@@ -133,6 +133,7 @@ for_window [title="terminal_calculator"] floating enable, move scratchpad, scrat
 ## power menu
 bindsym $mod+Shift+BackSpace exec --no-startup-id ~/.config/i3/scripts/shutdown_menu -p rofi -c;
 
+
 # focus the child container
 #bindsym $mod+d focus child
 
