@@ -18,7 +18,7 @@ alias ka="killall" \
 	youtube-dl="yt-dlp" \
 	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
 	yta="yt -x -f bestaudio/best" \
-  yts="ytfzf --detach -s -t" \
+  yts="ytfzf --detach -t --video-pref=22 -l --pages=10" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	ffmpeg="ffmpeg -hide_banner" \
 	bc="bc -ql" \

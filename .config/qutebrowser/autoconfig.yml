@@ -15,3 +15,8 @@ settings:
     https://www.reddit.com: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
+  url.searchengines:
+    global:
+      DEFAULT: https://duckduckgo.com/?q={}
+      g: https://www.google.com/search?q={}
+      yt: https://www.youtube.com/results?search_query={}

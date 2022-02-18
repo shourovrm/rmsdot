@@ -861,4 +861,14 @@ exec --no-startup-id $TERMINAL -fn "xft:mono:pixelsize=24" -name math -e radian 
 bindsym $mod+a [instance="math"] scratchpad show; move position center
 
 
+## ytfzf
+
+* after installation change /usr/local/bin/ytfzf, invidious_instance from https://vid.puffyan.us to https://ytb.trom.tf:
+
+> : "${invidious_instance:=https://ytb.trom.tf}"
+
+* create this alias:
+
+> yts="ytfzf --detach -t --video-pref=22 -l --pages=10"
+
 

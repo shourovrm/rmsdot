@@ -13,6 +13,9 @@ window:
   dynamic_padding: true
   decorations: full
   startup_mode: Windowed
+  opacity: 0.95
+
+
 
 scrolling:
   history: 10000
