@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -118,7 +118,7 @@ for_window [title="math"] move scratchpad
 bindsym $mod+a [title="math"] scratchpad show; move position center
 #exec --no-startup-id $TERMINAL --title math -e R -q
 
-exec --no-startup-id $TERMINAL --title math -e radian --quiet --vanilla
+exec --no-startup-id st -t math -e radian --quiet --vanilla
 
 
 
@@ -258,3 +258,9 @@ bindsym Control+Mod1+l exec i3lock -c 000000
 # exec nitrogen --restore
 # exec --no-startup-id lxpolkit &
 # exec_always --no-startup-id $HOME/polybar-collection/launch.sh
+
+# rofi-surfraw-websearch: web search via surfraw
+# bindsym $mod+y surfraw -browser=$BROWSER $(sr -elvi | awk -F'-' '{print $1}' | sed '/:/d' | awk '{$1=$1};1' | rofi -kb-row-select "Tab" -kb-row-tab "Control+space" -color-window "#000000, #000000, #000000" -color-normal "#000000, #b3e774, #000000, #b3e774, #000000" -color-active "#000000, #b3e774, #000000, #b3e774, #000000" -color-urgent "#000000, #b3e774, #000000, #b3e774, #000000" -dmenu -mesg ">>> Tab = Autocomplete" -i -p "websearch: ")
+
+# rofi-surfraw-bookmarks: bookmarks with tags via surfraw
+# bindsym $mod+Shift+y surfraw -browser=$BROWSER "$(cat ~/.config/surfraw/bookmarks | sed '/^$/d' | sed '/^#/d' | sed '/^\//d' | sort -n | rofi -color-window "#000000, #000000, #000000" -color-normal "#000000, #b3e774, #000000, #b3e774, #000000" -color-active "#000000, #b3e774, #000000, #b3e774, #000000" -color-urgent "#000000, #b3e774, #000000, #b3e774, #000000" -dmenu -mesg ">>> Edit to add new bookmarks at ~/.config/surfraw/bookmarks" -i -p "bookmarks: ")"

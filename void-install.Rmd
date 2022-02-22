@@ -139,8 +139,19 @@ Install from <https://github.com/pystardust/ani-cli>
 
 * check current keyboard layout: > setxkbmap -query
 * check all bangla keyboards and variants: sed '/! variant/,/^$/!d;/Bangla/!d' < /usr/share/X11/xkb/rules/evdev.lst
+* put these in /etc/X11/xorg.conf.d/00-keyboard.conf: 
 
-(Not needed) * set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle 
+Section "InputClass"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "us,bd"
+        Option "XkbModel" "pc105"
+        Option "XkbVariant" ",probhat"
+        Option "XkbOptions" "grp:win_space_toggle"
+EndSection
+
+* install xkb-switch
+* (Not needed) set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle 
 * set i3status-rust to show keyboard layouts using xkb-switch
 
 ## i3status-rust
@@ -163,22 +174,6 @@ alias zzz="sudo zzz"
 alias ZZZ="sudo ZZZ"
 ```
 
-
-## bangla layout 
-* put these in /etc/X11/xorg.conf.d/00-keyboard.conf: 
-
-
-Section "InputClass"
-        Identifier "system-keyboard"
-        MatchIsKeyboard "on"
-        Option "XkbLayout" "us,bd"
-        Option "XkbModel" "pc105"
-        Option "XkbVariant" ",probhat"
-        Option "XkbOptions" "grp:win_space_toggle"
-EndSection
-
-* install xkb-switch
-* setup i3status-rust to toggle keyboard on_click 
 
 ## solve vim pasting
 

@@ -1,7 +1,7 @@
 xrandr --dpi 120 &
 dunst &
 xrdb .Xresources & 
-xcompmgr &
+# xcompmgr &
 # pa-applet &
 #nm-applet &
 lxpolkit &

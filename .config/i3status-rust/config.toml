@@ -80,10 +80,11 @@ format = " {speed_down;K*B} {speed_up;K*B}"
 
 [[block]]
 block = "networkmanager"
+# device = "wlp6s0"
 on_click = "~/.local/bin/rofi-wifi-menu.sh"
 # on_click = "alacritty -e nmtui"
 interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
-interface_name_include = []
+interface_name_include = ["wlp6s0"]
 ap_format = "{ssid} {strength}"
 
 [[block]]

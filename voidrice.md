@@ -871,4 +871,23 @@ bindsym $mod+a [instance="math"] scratchpad show; move position center
 
 > yts="ytfzf --detach -t --video-pref=22 -l --pages=10"
 
+* st sometimes force closes, so use alacritty for ytfzf
+
+
+## Install and use flatpak
+
+* install flatpak: > sudo xbps-install -S flatpak
+* add flatpak repository: > flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+* restart pc
+* search packages: flatpak remote-ls flathub --app | grep -i jasp
+* install: > flatpak install flathub org.jaspstats.JASP
+* list installed app: > flatpak list --app
+* uninstall app using APP id and remove personal data: > flatpak uninstall --delete-data org.jaspstats.JASP 
+* list runtimes installed alongside apps: > flatpak list --runtime
+* uninstall unused runtimes: > flatpak uninstall --unused 
+* uninstall everything installed using flatpak: > flatpak uninstall --all --delete-data 
+* repair flatpak if uninstall does not work due to broken packages: > sudo flatpak repair
+* update by: > flatpak update 
+
+
 
