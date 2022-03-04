@@ -53,7 +53,7 @@
     void-repo-multilib-nonfree
     neovim
 * change mirrors
-    mkdir -p xb
+    mkdir -p /etc/xbps.d/
     cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
     sed -i 's|https://alpha.de.repo.voidlinux.org|https://mirrors.cnnic.cn/voidlinux|g' /etc/xbps.d/*-repository-*.conf
     xbps-install -S
