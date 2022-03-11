@@ -91,7 +91,7 @@ systemctl enable acpid
 
 useradd -m rms
 echo rms:a | chpasswd
-usermod -aG libvirt ermanno
+usermod -aG libvirt rms
 
 echo "rms ALL=(ALL) ALL" >> /etc/sudoers.d/rms
 
