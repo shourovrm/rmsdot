@@ -5,7 +5,7 @@
 * increase font size:
     setfont ter-118n
 * check internet connection (folllow EF Linux Youtube channel):
-    ip a 
+    ip a
 * add bangladeshi mirror:
     * install: > sudo pacman -S reflector curl rsync
     * backup /etc/pacman.d/mirrorlist
@@ -38,7 +38,7 @@
 
 ## Start Setup
 
-## pacstrap 
+## pacstrap
     pacstrap /mnt base linux linux-firmware git curl neovim intel-ucode
 
 ## create fstab using label
@@ -66,7 +66,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:a | chpasswd
 
-# You can add xorg to the installation packages, I usually add it at the DE or WM install script
+# You can add the xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
 
 pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font
@@ -102,5 +102,10 @@ printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
 ## add intel driver
 * in /etc/mkinitcpio.conf, inside the bracket of MODULES put i915
-* run: > sudo mkinitcpio -p linux 
-*
+* run: > sudo mkinitcpio -p linux
+
+
+## Install R
+
+* install these packages: armadillo, tk
+* install rstudio-server aur package manually

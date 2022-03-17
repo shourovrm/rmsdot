@@ -110,7 +110,7 @@ Install from <https://github.com/pystardust/ani-cli>
 
 ## ytfzf
 
-* install jq and curl 
+* install jq and curl
 * install ytfzf from <https://github.com/pystardust/ytfzf>
 * change default invidious_instance from https://vid.puffyan.us to https://ytb.trom.tf in ytfzf file located at /usr/local/bin/ytfzf.
 
@@ -125,12 +125,12 @@ Install from <https://github.com/pystardust/ani-cli>
 
 ## install starship shell prompt
 
-* install starship using xbps 
+* install starship using xbps
 * insert this line at the end of .bashrc: eval "$(starship init bash)"
 
 ## Nerd Fonts
 
-* we can install nerd-fonts package, or 
+* we can install nerd-fonts package, or
 * download fonts from <https://www.nerdfonts.com/font-downloads>
 * good fonts are - JetBrains Mono, FiraCode Mono, Anonymice nerd fonts, UbuntuMono, losevka
 
@@ -139,7 +139,7 @@ Install from <https://github.com/pystardust/ani-cli>
 
 * check current keyboard layout: > setxkbmap -query
 * check all bangla keyboards and variants: sed '/! variant/,/^$/!d;/Bangla/!d' < /usr/share/X11/xkb/rules/evdev.lst
-* put these in /etc/X11/xorg.conf.d/00-keyboard.conf: 
+* put these in /etc/X11/xorg.conf.d/00-keyboard.conf:
 
 Section "InputClass"
         Identifier "system-keyboard"
@@ -151,7 +151,7 @@ Section "InputClass"
 EndSection
 
 * install xkb-switch
-* (Not needed) set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle 
+* (Not needed) set Alt-Space to change layout and put it in .xprofile or .xinitrc (without login manager lxdm): >  setxkbmap -model pc105 -layout us,bd -variant ,probhat -option grp:win_space_toggle
 * set i3status-rust to show keyboard layouts using xkb-switch
 
 ## i3status-rust
@@ -163,7 +163,7 @@ EndSection
 ## reboot, shutdown etc without password
 
 * put these in /etc/sudoers.d/rms by using:
-> echo "username ALL=(ALL) NOPASSWD:  /bin/halt,  /bin/poweroff,  /bin/reboot,  /bin/shutdown,  /bin/zzz,  /bin/ZZZ" >> /etc/sudoers.d/rms 
+> echo "username ALL=(ALL) NOPASSWD:  /bin/halt,  /bin/poweroff,  /bin/reboot,  /bin/shutdown,  /bin/zzz,  /bin/ZZZ" >> /etc/sudoers.d/rms
 * add these in aliasrc file:
 ```{bash}
 alias halt="sudo halt"
@@ -177,7 +177,7 @@ alias ZZZ="sudo ZZZ"
 
 ## solve vim pasting
 
-* install xclip and autostart at .xprofile 
+* install xclip and autostart at .xprofile
 
 ## for Neovim
 
@@ -194,4 +194,10 @@ set preview_images true
 set preview_images_method ueberzug
 ```
 
+## Installing and setting gnome
 
+* for minimal gnome, install gnome-core
+* install gvfs-goa, gnome-online-accounts for gdrive in nautilus
+* activate gdm service and remove lxdm
+* install chrome-gnome-shell using xbps and install chrome gnome extenstion, then new extensions like simple system monitor can be installed .
+*

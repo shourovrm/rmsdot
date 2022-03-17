@@ -7,12 +7,13 @@ export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$/
 # tinytex path
 export PATH="$PATH:$(du "$HOME/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
-# nodejs path 
+# nodejs path
 export PATH="$PATH:$(du "$HOME/node_modules/.bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 
 # Default programs:
 export EDITOR="nvim"
+# export TERMINAL="alacritty"
 export TERMINAL="st"
 export BROWSER="brave-browser-nightly"
 export READER="mupdf"
