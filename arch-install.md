@@ -100,6 +100,13 @@ printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
 ---
 
+
+## Polkit
+
+* install polkit-gnome
+* put these in .xprofile:
+	> /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 ## add intel driver
 * in /etc/mkinitcpio.conf, inside the bracket of MODULES put i915
 * run: > sudo mkinitcpio -p linux

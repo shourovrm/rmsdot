@@ -39,5 +39,7 @@ application/vnd.ms-excel=libreoffice-calc.desktop
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
 
 [Added Associations]
-inode/directory=ranger.desktop;pcmanfm.desktop;vifm.desktop;
-application/pdf=org.gnome.Evince.desktop;
+inode/directory=pcmanfm.desktop;ranger.desktop;vifm.desktop;
+application/pdf=libreoffice-draw.desktop;org.pwmt.zathura-pdf-mupdf.desktop;org.gnome.Evince.desktop;
+image/jpeg=feh.desktop;
+application/octet-stream=nvim.desktop;

@@ -787,12 +787,12 @@ defaults.pcm.card 1;
 
 > ssh-keygen -t rsa -C "shourovrm@gmail.com"
 
-* Copy the content of ~/.ssh/id_rsa.pub file and in Github Account Settings > SSH keys 
-* In a terminal, test it - 
+* Copy the content of ~/.ssh/id_rsa.pub file and in Github Account Settings > SSH keys
+* In a terminal, test it -
 > ssh -T git@github.com
 
 * create a Personal Access Token (PAT) in github and use it when asked for password
-* save git credientials: 
+* save git credientials:
 > git config --global credential.helper store
 
 * Use git:// instead of https:// to avoid asking password everytime
@@ -800,7 +800,7 @@ defaults.pcm.card 1;
 # Save dotfiles in github (<https://www.atlassian.com/git/tutorials/dotfiles>)
 
 * We will use a git bare repository for this purpose
-* create a bare git repository 
+* create a bare git repository
 > cd ~
 
 > git init --bare $HOME/.cfg
@@ -809,9 +809,9 @@ defaults.pcm.card 1;
 > alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 * We set a flag - local to the repository - to hide files we are not explicitly tracking yet. This is so that when you type config status and other commands later, files you are not interested in tracking will not show up as untracked.
 > config config --local status.showUntrackedFiles no
-* save the alias in .bashrc 
+* save the alias in .bashrc
 > echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
-* add a remote origin 
+* add a remote origin
 > config remote add origin git@github.com:shourovrm/rmsrice.git
 
 * now we can check status:
@@ -822,33 +822,33 @@ defaults.pcm.card 1;
 
 > config commit -m "add tmux files"
 
-* push to master 
-> config push -u origin master 
+* push to master
+> config push -u origin master
 
 * delete any file from repository:
-> config rm ~/git.md 
+> config rm ~/git.md
 
 > config commit -m "remove git.md"
 
-> config push -u origin master 
+> config push -u origin master
 
 * update files:
 > config add -u
 
 > config commit -m "updated files"
 
-> config push -u origin master 
+> config push -u origin master
 
 ## Nodejs install
 
 * nodejs closest bin can be found by -
 > npm bin
 
-* put this in path in .profile 
+* put this in path in .profile
 
 ## setting up calculator in i3
 
-* put these lines in i3/config 
+* put these lines in i3/config
 
 
 #Then I have a window running R I use for basic arithmetic
@@ -882,12 +882,24 @@ bindsym $mod+a [instance="math"] scratchpad show; move position center
 * search packages: flatpak remote-ls flathub --app | grep -i jasp
 * install: > flatpak install flathub org.jaspstats.JASP
 * list installed app: > flatpak list --app
-* uninstall app using APP id and remove personal data: > flatpak uninstall --delete-data org.jaspstats.JASP 
+* uninstall app using APP id and remove personal data: > flatpak uninstall --delete-data org.jaspstats.JASP
 * list runtimes installed alongside apps: > flatpak list --runtime
-* uninstall unused runtimes: > flatpak uninstall --unused 
-* uninstall everything installed using flatpak: > flatpak uninstall --all --delete-data 
+* uninstall unused runtimes: > flatpak uninstall --unused
+* uninstall everything installed using flatpak: > flatpak uninstall --all --delete-data
 * repair flatpak if uninstall does not work due to broken packages: > sudo flatpak repair
-* update by: > flatpak update 
+* update by: > flatpak update
 
+## To add icon to an application
 
+* download svg or png icon for that application
+* add the icon path to the /usr/share/applications/<app-name>.desktop file in 'Icons' options
 
+## Installing and setting lxde
+
+* install lxde
+* if panel is weirdly behaving, create new panel
+* if there is no system tray in new panel copy the options from previous panel
+* panel configs are located at ~/.config/lxpanel/LXDE/panels
+* the main panel is named as panels. In that file there are options for system-tray
+* icons of lxpanel are generally located at /usr/share/lxpanel
+* new png or svg icons can be added if needed
